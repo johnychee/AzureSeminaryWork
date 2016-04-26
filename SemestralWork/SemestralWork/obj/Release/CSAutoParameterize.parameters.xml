@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SeminaryWorkTasksEntities-Web.config Connection String" description="SeminaryWorkTasksEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.TasksContext.csdl|res://*/Models.TasksContext.ssdl|res://*/Models.TasksContext.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=johnychee.database.windows.net;initial catalog=SeminaryWorkTasks;user id=johnycheeadmin;password=d5Hskm79;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\work\\Damas\\Věci\ pro\ DAMAS\ MMS\\Nová\ verze\ 5\.4\.2016\\SemestralWork\\SemestralWork\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SeminaryWorkTasksEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SemestralWork.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SeminaryWorkTasksEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tasks" EntityType="SemestralWork.Models.Task" />
+    <EntitySet Name="TaskTypes" EntityType="SemestralWork.Models.TaskType" />
+    <EntitySet Name="LibraryAuthors" EntityType="SemestralWork.Models.LibraryAuthor" />
+    <AssociationSet Name="FK_Task_To_TaskType" Association="SemestralWork.Models.FK_Task_To_TaskType">
+      <End Role="TaskType" EntitySet="TaskTypes" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaskTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TaskType" Relationship="SemestralWork.Models.FK_Task_To_TaskType" FromRole="Task" ToRole="TaskType" />
+  </EntityType>
+  <EntityType Name="TaskType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tasks" Relationship="SemestralWork.Models.FK_Task_To_TaskType" FromRole="TaskType" ToRole="Task" />
+  </EntityType>
+  <EntityType Name="LibraryAuthor">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="AuthorName" />
+      <PropertyRef Name="StoragePartitionKey" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuthorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoragePartitionKey" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Task_To_TaskType">
+    <End Type="SemestralWork.Models.TaskType" Role="TaskType" Multiplicity="1" />
+    <End Type="SemestralWork.Models.Task" Role="Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="TaskTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

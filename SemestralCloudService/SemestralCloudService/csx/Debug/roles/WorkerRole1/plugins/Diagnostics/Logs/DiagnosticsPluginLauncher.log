@@ -1,0 +1,10 @@
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Emulator config file set to C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] DiagnosticsStoreRootPath set to: C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WorkerRole1\approot
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Loading config file: C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Config file to read: C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Emulator config file set to C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [26.04.2016 12:08:40] Stopping the running plugin, if any

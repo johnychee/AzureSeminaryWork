@@ -1,0 +1,60 @@
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Starting DiagnosticPlugin.exe DiagnosticPlugin-ShutdownEvent DiagnosticPlugin-TotalShutdownEvent -wadVer1v5
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Successfully saved IIS Directory state
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Starting DiagnosticsPlugin
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Emulator config file set to C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] DiagnosticsStoreRootPath set to: C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Loading config file: C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Config file to read: C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Checking VM Type
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Emulator config file set to C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Extension set to Emulator Mode
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Reading XML configuration file
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Bypassing private config decryption
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] WadCfg is provided in initial configuration. Using that to initialize Diagnostics.
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] <PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
+  <WadCfg>
+    <DiagnosticMonitorConfiguration overallQuotaInMB="4096">
+      <DiagnosticInfrastructureLogs scheduledTransferLogLevelFilter="Error" />
+      <Logs scheduledTransferPeriod="PT1M" scheduledTransferLogLevelFilter="Error" />
+      <Directories scheduledTransferPeriod="PT1M">
+        <IISLogs containerName="wad-iis-logfiles" />
+        <FailedRequestLogs containerName="wad-failedrequestlogs" />
+      </Directories>
+      <WindowsEventLog scheduledTransferPeriod="PT1M">
+        <DataSource name="Application!*[System[(Level=1 or Level=2 or Level=3)]]" />
+        <DataSource name="Windows Azure!*[System[(Level=1 or Level=2 or Level=3 or Level=4)]]" />
+      </WindowsEventLog>
+      <CrashDumps containerName="wad-crashdumps" dumpType="Mini">
+        <CrashDumpConfiguration processName="WaIISHost.exe" />
+        <CrashDumpConfiguration processName="WaWorkerHost.exe" />
+        <CrashDumpConfiguration processName="w3wp.exe" />
+      </CrashDumps>
+      <PerformanceCounters scheduledTransferPeriod="PT1M">
+        <PerformanceCounterConfiguration counterSpecifier="\Memory\Available MBytes" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\Web Service(_Total)\ISAPI Extension Requests/sec" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\Web Service(_Total)\Bytes Total/Sec" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\ASP.NET Applications(__Total__)\Requests/Sec" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\ASP.NET Applications(__Total__)\Errors Total/Sec" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\ASP.NET\Requests Queued" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\ASP.NET\Requests Rejected" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT3M" />
+      </PerformanceCounters>
+    </DiagnosticMonitorConfiguration>
+  </WadCfg>
+  <StorageAccount>devstoreaccount1</StorageAccount>
+</PublicConfig>
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Private setting is loaded
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Is config json/xml loaded
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Successfully created checkpoint file C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot\WAD0105\Configuration\Checkpoint.txt
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Will use local resource directory C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot\WAD0105
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:14] Will use endpoint https://core.windows.net for storage.
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:15] Expanding path %SystemDrive%\inetpub\logs\LogFiles to C:\inetpub\logs\LogFiles
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:15] Expanding path %SystemDrive%\inetpub\logs\FailedReqLogFiles to C:\inetpub\logs\FailedReqLogFiles
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:15] Created IIS log watch item: "C:\inetpub\logs\LogFiles"
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:15] Created IIS failed requests watch item: "C:\inetpub\logs\FailedReqLogFiles"
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:15] Running in emulator mode, crash dumps not enabled
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:15] Checking to see if Application Insights extension needs to be configured.
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:38:16] In emulator mode and using devstore updating XStoreAccount info, command line args: -LocalPath "C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot\WAD0105"  -ConfigFile "C:\work\Damas\Věci pro DAMAS MMS\Nová verze 5.4.2016\SemestralCloudService\SemestralCloudService\csx\Debug\roles\WebRole1\approot\WAD0105\Configuration\MaConfig.xml" -ShutDownEvent WADDM-ShutDown-db5768e47d43463c8e9fd8c76d11793a  -TotalShutDownEvent WADDM-TotalShutDown-db5768e47d43463c8e9fd8c76d11793a -InitializedEvent WADM-StartUp-db5768e47d43463c8e9fd8c76d11793a -parent 16260 -events -wadVer1v5 -UseProxyServer -XStoreAccounts WadAccount#true#devstoreaccount1#Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==#http://127.0.0.1:10002#http://127.0.0.1:10001#http://127.0.0.1:10000
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:39:16] MonAgentHost.exe started
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:39:16] DiagnoticsPlugin started.
+DiagnosticsPlugin.exe Information: 0 : [26.04.2016 11:39:16] DiagnoticsPlugin now waiting on events "DiagnosticPlugin-ShutdownEvent", "DiagnosticPlugin-TotalShutdownEvent" or "DiagnosticPlugin-RestartEvent".

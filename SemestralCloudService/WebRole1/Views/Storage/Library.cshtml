@@ -1,0 +1,64 @@
+﻿@using DataTableStorage1Sample.Model;
+@using WebRole1.Models
+@model BookEntity
+@{
+    Dictionary<string, List<BookEntity>> libraryBooks = ViewBag.libraryBooks;
+    List<LibraryAuthor> authors = ViewBag.Authors;
+    ViewBag.Title = "Library";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>Create new book</h3>
+
+@using (@Html.BeginForm("CreateBook", "Storage", FormMethod.Post))
+{
+    <label for="Autor" class="col-md-3 control-label ui-sortable">Author:</label>
+    @Html.DropDownList("Author", new SelectList(
+                            authors,
+                      "StoragePartitionKey",
+                      "AuthorName",
+                       2), new { @class = "form-control", @required = true })
+
+    <label for="BookName" class="col-md-3 control-label ui-sortable">Book name:</label>
+    @Html.TextBox("BookName", null, new { @class = "form-control", @required = true, @maxlength = "50" })
+
+    <label for="Count" class="col-md-3 control-label ui-sortable">Count in library:</label>
+    @Html.TextBox("Count", null, new { @class = "form-control", @required = true, @maxlength = "50" })
+
+    <label for="Price" class="col-md-3 control-label ui-sortable">Price:</label>
+    @Html.TextBox("Price", null, new { @class = "form-control", @required = true, @maxlength = "50" })
+
+    <button class="btn btn-success" data-send="once">Create book</button>
+}
+
+<h2>Books In Library</h2>
+@foreach (string author in libraryBooks.Keys)
+{
+    <h3>@author:</h3>
+    if (libraryBooks[author].Count == 0)
+    {
+        <p>No books for this author</p>
+    }
+    else
+    {
+        <table border="1" cellpadding="6" cellspacing="0">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Count in library</th>
+                <th>Actions</th>
+            </tr>
+
+
+            @foreach (BookEntity book in libraryBooks[author])
+            {
+                <tr>
+                    <td>@Html.ActionLink(book.RowKey, "Edit", new { author = book.PartitionKey, bookName = book.RowKey })</td>
+                    <td>@book.Price</td>
+                    <td>@book.Count</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { author = book.PartitionKey, bookName = book.RowKey }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure?');" })</td>
+                </tr>
+            }
+        </table>
+    }
+
+}

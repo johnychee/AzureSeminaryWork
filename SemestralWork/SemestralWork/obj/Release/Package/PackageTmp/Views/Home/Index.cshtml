@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Web Jobs</h1>
+    <p class="lead">This semestral work focus on azure Web Jobs. You can either create new task in "Create new task" page or you can watch their processing in "Continous WebJobs" page or in "On-Demand WebJobs" page.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Create new WebJob task and let it be processed by continous webjob or On-Demand web job. You can select the type of processing by WebJob type.
+        </p>
+        <p>@Html.ActionLink("Create Job", "Create", "Task", null, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Continous WebJobs</h2>
+        <p>See the table with continous WebJob tasks. Continous WebJob is automatically invoked every minute. This job process only one task per run.</p>
+        <p>@Html.ActionLink("Continous WebJobs", "ContinousJobs", "Task", null, new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>On-Demand WebJobs</h2>
+        <p>See the table with On-Demand WebJob tasks. On-Demand WebJob can be invoked by button in "On-Demand WebJobs" page. This job process only one task per run.</p>
+        <p>@Html.ActionLink("On-Demand WebJobs", "OnDemandJobs", "Task", null, new { @class = "btn btn-default" })</p>
+    </div>
+</div>

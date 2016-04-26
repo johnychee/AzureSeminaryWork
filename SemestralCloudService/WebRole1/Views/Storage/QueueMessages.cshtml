@@ -1,0 +1,25 @@
+﻿@using DataTableStorage1Sample.Model;
+@using Microsoft.WindowsAzure.Storage.Queue
+@using WebRole1.Models
+@model BookEntity
+@{
+    IEnumerable<CloudQueueMessage> messages = ViewBag.queueMessages;
+    ViewBag.Title = "Azure Queue messages";
+}
+<h2>@ViewBag.Title.</h2>
+
+<h2>Messages In queue</h2>
+@foreach (CloudQueueMessage message in messages)
+{
+
+    <table border="1" cellpadding="6" cellspacing="0">
+        <tr>
+            <th>Message</th>
+        </tr>
+
+
+        <tr>
+            <td>@message.AsString</td>
+        </tr>
+    </table>
+}

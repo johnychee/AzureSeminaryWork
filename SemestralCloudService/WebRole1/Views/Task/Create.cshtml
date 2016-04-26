@@ -1,0 +1,27 @@
+﻿@using WebRole1.Models
+@model WebRole1.Models.Task
+@{
+    ViewBag.Title = "Tasks creator";
+    List<TaskType> taskTypes = ViewBag.TaskTypes;    
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+    @using (@Html.BeginForm("Create", "Task", FormMethod.Post))
+    {
+        <label for="Name" class="col-md-3 control-label ui-sortable">Name:</label>
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @required = true, @maxlength = "50" })
+        @Html.ValidationMessageFor(model => model.Name)
+
+        <label for="Description" class="col-md-3 control-label ui-sortable">Description:</label>  
+        @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Description)
+
+        <label for="TaskType" class="col-md-3 control-label ui-sortable">Task type:</label>
+        @Html.DropDownListFor(model => model.TaskType, new SelectList(
+                            taskTypes,
+                  "Id",
+                  "Name",
+                   2))
+    <button class="btn btn-success" data-send="once">Create Task</button>
+    }

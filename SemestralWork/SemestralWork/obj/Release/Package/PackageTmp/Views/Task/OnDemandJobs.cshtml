@@ -1,0 +1,33 @@
+﻿@using SemestralWork.Models
+@{
+    ViewBag.Title = "On-Demand Tasks";
+    List<Task> onDemandTasksList = ViewBag.OnDemandWebJobs;
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (Task task in onDemandTasksList)
+    {
+        <tr>
+            <td>@task.Id</td>
+            <td>@Html.ActionLink(task.Name, "Edit", new { @id = task.Id })</td>
+            <td>@task.Description</td>
+            <td>On-Demand WebJob</td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { @id = task.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure?');" })
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>@Html.ActionLink("Process random task", "ProcessODTask", null, new { @class = "btn btn-success" })</td>
+    </tr>
+</table>

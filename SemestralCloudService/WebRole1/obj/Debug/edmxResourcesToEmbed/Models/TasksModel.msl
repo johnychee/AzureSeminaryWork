@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SemestralWorkModelsStoreContainer" CdmEntityContainer="SeminaryWorkTasksEntities">
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="SemestralWork.Models.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TaskTypeId" ColumnName="TaskTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskTypes">
+      <EntityTypeMapping TypeName="SemestralWork.Models.TaskType">
+        <MappingFragment StoreEntitySet="TaskType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LibraryAuthors">
+      <EntityTypeMapping TypeName="SemestralWork.Models.LibraryAuthor">
+        <MappingFragment StoreEntitySet="LibraryAuthor">
+          <ScalarProperty Name="StoragePartitionKey" ColumnName="StoragePartitionKey" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

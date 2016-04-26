@@ -1,0 +1,42 @@
+﻿@using DataTableStorage1Sample.Model;
+@using Microsoft.WindowsAzure.Storage.Blob
+@using WebRole1.Models
+@model BookEntity
+@{
+    IEnumerable<CloudBlockBlob> uploadedFiles = ViewBag.UploadedFiles;
+    ViewBag.Title = "Uploaded files";
+}
+<h2>@ViewBag.Title.</h2>
+
+<h3>Upload new file</h3>
+@using (Html.BeginForm("SaveFile", "Storage", FormMethod.Post,
+    new { enctype = "multipart/form-data" }))
+{
+    <div class="editor-label">Image</div>
+    <div class="editor-field">
+        <div>Upload new image: <input type="file" name="file" id="file" /></div>
+    </div>
+
+    <input type="submit" value="Save" />
+}
+<br/>
+<h3>Files List</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+    <tr>
+        <th>File Name</th>
+        <th>File Length</th>
+        <th>File Content Type</th>
+        <th>File URI</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (CloudBlockBlob file in uploadedFiles)
+    {
+        <tr>
+            <td>@file.Name</td>
+            <td>@file.Properties.Length</td>
+            <td>@file.Properties.ContentType</td>
+            <td><a href="@file.Uri">@file.Uri</a></td>
+            <td>@Html.ActionLink("Delete", "DeleteFile", new { fileName = file.Name }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure?');" })</td>
+        </tr>
+    }
+</table>
